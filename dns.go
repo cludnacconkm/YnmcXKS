@@ -9,7 +9,6 @@ import (
 var DNSModeMapping = map[string]DNSMode{
 	DNSNormal.String():  DNSNormal,
 	DNSFakeIP.String():  DNSFakeIP,
-	DNSMapping.String(): DNSMapping,
 }
 
 const (
@@ -36,7 +35,6 @@ func (e *DNSMode) UnmarshalYAML(unmarshal func(any) error) error {
 
 // MarshalYAML serialize EnhancedMode with yaml
 func (e DNSMode) MarshalYAML() (any, error) {
-	return e.String(), nil
 }
 
 // UnmarshalJSON unserialize EnhancedMode with json
